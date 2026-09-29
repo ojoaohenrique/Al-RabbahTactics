@@ -4,7 +4,7 @@
 	background: url(img/wood_floor.jpg);
 }
 
-.pitch svg {
+.pitch > svg {
 	width: 100%;
 	height: 100%;
 }

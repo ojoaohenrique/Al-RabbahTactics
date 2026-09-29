@@ -547,7 +547,8 @@ class PitchEdit extends Component {
 						<circle r="300" cx="2000" cy="1000" fill="none" />
 						<circle r="12" cx="2000" cy="1000" fill="white" strokeWidth="0" />
 						{/* logo do time desenhada DEPOIS das linhas centrais, para ficar por cima */}
-						{this.renderCenterAD(1700,700,600,600)}
+						{/* escudo de 440x440 centrado em (2000,1000): cabe dentro do círculo central (raio 300) sem tocar nas linhas */}
+						{this.renderCenterAD(1780,780,440,440)}
 						<g id="corner_marks">
 							<path fill="none" d="M25,0 a25,25 0 0,1 -25,25" />
 							<path fill="none" d="M4000,25 a25,25 0 0,1 -25,-25" />
