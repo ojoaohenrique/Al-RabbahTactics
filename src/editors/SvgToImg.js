@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FileSaver from 'browser-filesaver';
-import { Buffer } from 'buffer';
 
 class SvgToImg extends Component {
 	
@@ -32,7 +31,8 @@ class SvgToImg extends Component {
 			});
 
 			// prepare svg to load image
-			const encodedString = 'data:image/svg+xml;base64,' + Buffer.from(svgText).toString('base64');
+			// encodeURIComponent é nativo do navegador e aceita acentos (ex.: "João")
+			const encodedString = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgText);
 			img.onerror = reject;		// setup rejection
 			img.src = encodedString;	// start loading image
 		});
