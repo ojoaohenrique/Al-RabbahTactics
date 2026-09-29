@@ -3,14 +3,14 @@ const AppConfigs = {
 		useFirebase: true,
 		siteHomeURL: null,
 		siteLogoURL: null,
-		pitchCenterADURL: null,
+		pitchCenterADURL: process.env.PUBLIC_URL + '/alrabbah-logo.png',
 		thumbnailWidth: 320,	// height calculated from proportions
 	},
 	coatchingfutsal: {
 		useFirebase: false,
 		siteHomeURL: '/',
 		siteLogoURL: '/TacticsBoard/ext/cf_logo.png',
-		pitchCenterADURL: '/TacticsBoard/CenterAdvert',
+		pitchCenterADURL: process.env.PUBLIC_URL + '/alrabbah-logo.png',
 		signInURL: '/Account/LoginRegister',
 		signOutURL: '/Account/LogOff',
 		getUserURL: '/Account/GetUser',

@@ -543,10 +543,11 @@ class PitchEdit extends Component {
 					</g>
 					<g id="pitch" transform={pitchTransform} fill="#0280c6" stroke="white" strokeWidth="8">
 						<rect width="4000" height="2000" />
-						{this.renderCenterAD(1700,700,600,600)}
 						<line x1="2000" x2="2000" y1="0" y2="2000" />
 						<circle r="300" cx="2000" cy="1000" fill="none" />
 						<circle r="12" cx="2000" cy="1000" fill="white" strokeWidth="0" />
+						{/* logo do time desenhada DEPOIS das linhas centrais, para ficar por cima */}
+						{this.renderCenterAD(1700,700,600,600)}
 						<g id="corner_marks">
 							<path fill="none" d="M25,0 a25,25 0 0,1 -25,25" />
 							<path fill="none" d="M4000,25 a25,25 0 0,1 -25,-25" />
