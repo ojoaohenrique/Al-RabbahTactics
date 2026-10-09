@@ -28,7 +28,8 @@ export const PlayerToken = memo(function PlayerToken({ player, team, pos, r, gho
     >
       {/* área de toque maior que a bolinha, para facilitar no celular */}
       {!ghost && <circle r={r * 1.5} fill="transparent" />}
-      <circle r={r} fill={colors.color} stroke="#111" strokeWidth={r * 0.1} />
+      {/* contorno na cor do número: anel branco no time preto, preto no time branco */}
+      <circle r={r} fill={colors.color} stroke={colors.textColor} strokeWidth={r * 0.12} />
       <text
         textAnchor="middle"
         dominantBaseline="central"

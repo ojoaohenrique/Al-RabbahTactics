@@ -6,7 +6,8 @@ import type { RosterEntry, SavedPlay } from '../state/storage'
 import { IconClose, IconShuffle, IconTrash } from './Icons'
 import { Button, Field, IconButton, inputClass } from './ui'
 
-const TEAM_COLORS = ['#E8661F', '#111111', '#f5f5f5', '#ef4444', '#2563eb', '#16a34a', '#facc15', '#7c3aed']
+// preto e branco primeiro (cores do racha); as outras ficam para jogos contra outros times
+const TEAM_COLORS = ['#111111', '#f5f5f5', '#E8661F', '#ef4444', '#2563eb', '#16a34a', '#facc15', '#7c3aed']
 
 export type PanelTab = 'times' | 'elenco' | 'jogadas'
 

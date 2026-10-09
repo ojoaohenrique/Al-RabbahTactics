@@ -16,6 +16,24 @@ import { FORMATIONS } from './formations'
 import { PITCHES } from './pitches'
 import { decodePlay, encodePlay, validatePlay } from './share'
 
+describe('cores dos times', () => {
+  it('jogada nova é preto x branco', () => {
+    const play = createPlay()
+    expect(play.teams.home.color).toBe('#111111')
+    expect(play.teams.away.color).toBe('#f5f5f5')
+  })
+
+  it('atualiza jogadas antigas (laranja) e preserva times personalizados', () => {
+    const old = { ...createPlay(), teams: { home: { name: 'Al-Rabbah', color: '#E8661F', textColor: '#111111' }, away: { name: 'Adversário', color: '#f5f5f5', textColor: '#111111' } } }
+    const migrated = validatePlay(JSON.parse(JSON.stringify(old)))!
+    expect(migrated.teams.home).toEqual({ name: 'Preto', color: '#111111', textColor: '#ffffff' })
+    expect(migrated.teams.away.name).toBe('Branco')
+
+    const custom = { ...createPlay(), teams: { home: { name: 'Racha', color: '#2563eb', textColor: '#ffffff' }, away: { name: 'Visitas', color: '#ef4444', textColor: '#ffffff' } } }
+    expect(validatePlay(JSON.parse(JSON.stringify(custom)))!.teams).toEqual(custom.teams)
+  })
+})
+
 describe('createPlay', () => {
   it('cria society com 7 titulares + 3 reservas por time', () => {
     const play = createPlay()

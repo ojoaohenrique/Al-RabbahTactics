@@ -10,15 +10,43 @@ import type { Drawing, Frame, PitchColorId, PitchId, Play, Player, Team, TeamSid
 
 export const BALL_ID = 'ball'
 
+/** O racha do Al-Rabbah é sempre time preto contra time branco. */
 export const DEFAULT_TEAMS: Record<TeamSide, Team> = {
+  home: { name: 'Preto', color: '#111111', textColor: '#ffffff' },
+  away: { name: 'Branco', color: '#f5f5f5', textColor: '#111111' },
+}
+
+/** Goleiros com cor diferente da linha: laranja (time preto) e amarelo (time branco). */
+export const GOALKEEPER_COLORS: Record<TeamSide, Team> = {
+  home: { name: '', color: '#E8661F', textColor: '#111111' },
+  away: { name: '', color: '#facc15', textColor: '#111111' },
+}
+
+/** Cores padrão da primeira versão (laranja x branco), para atualizar jogadas antigas. */
+const OLD_DEFAULT_TEAMS: Record<TeamSide, Team> = {
   home: { name: 'Al-Rabbah', color: '#E8661F', textColor: '#111111' },
   away: { name: 'Adversário', color: '#f5f5f5', textColor: '#111111' },
 }
 
-/** Cor do goleiro: um tom escuro para o time da casa, amarelo para o visitante. */
-export const GOALKEEPER_COLORS: Record<TeamSide, Team> = {
-  home: { name: '', color: '#111111', textColor: '#E8661F' },
-  away: { name: '', color: '#facc15', textColor: '#111111' },
+/**
+ * Jogadas salvas antes da troca para preto x branco: se o time ainda está com a
+ * cor padrão antiga, troca para a nova. Times que você personalizou não mudam.
+ */
+export function migrateTeams(play: Play): Play {
+  let changed = false
+  const teams = { ...play.teams }
+  for (const side of ['home', 'away'] as const) {
+    const old = OLD_DEFAULT_TEAMS[side]
+    const t = teams[side]
+    if (side === 'home' && t.color.toLowerCase() === old.color.toLowerCase()) {
+      teams[side] = { ...DEFAULT_TEAMS[side], name: t.name === old.name ? DEFAULT_TEAMS[side].name : t.name }
+      changed = true
+    } else if (side === 'away' && t.name === old.name && t.color.toLowerCase() === old.color.toLowerCase()) {
+      teams[side] = { ...t, name: DEFAULT_TEAMS[side].name }
+      changed = true
+    }
+  }
+  return changed ? { ...play, teams } : play
 }
 
 export function newId(prefix = 'id'): string {

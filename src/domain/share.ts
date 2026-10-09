@@ -1,3 +1,4 @@
+import { migrateTeams } from './board'
 import { PITCHES } from './pitches'
 import type { Play } from './types'
 
@@ -43,5 +44,5 @@ export function validatePlay(data: unknown): Play | null {
   if (!p.pitch || !(p.pitch in PITCHES)) return null
   if (!Array.isArray(p.players) || !Array.isArray(p.frames) || p.frames.length === 0) return null
   if (!Array.isArray(p.drawings) || !p.teams?.home || !p.teams?.away) return null
-  return p as Play
+  return migrateTeams(p as Play)
 }
