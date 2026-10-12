@@ -82,3 +82,6 @@ As medidas estão em `src/domain/pitches.ts`. Por exemplo, se o society de sexta
 ## Créditos
 
 Inspirado no [tactics-board](https://github.com/gljubojevic/tactics-board) de **Goran Ljubojević**, que foi a base de estudo deste projeto. Esta versão foi reescrita do zero por **João Henrique Fanfa** para o Al-Rabbah.
+
+## i am
+João Henrique Fanfa 2026
