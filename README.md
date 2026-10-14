@@ -1,6 +1,6 @@
 # Al-Rabbah Tactics
 
-Prancheta tática do **Al-Rabbah**, o time da sexta-feira. Serve para montar a escalação do racha, desenhar jogadas e animar a movimentação dos jogadores, no computador ou no celular.
+Prancheta tática do **Al-Rabbah**, o meu time de toda sexta-feira. Serve para montar a escalação do rachão, desenhar jogadas e animar a movimentação dos jogadores, no computador ou no celular.
 
 ## O que dá para fazer
 
@@ -78,10 +78,3 @@ src/
 ### Ajustando para o campo de vocês
 
 As medidas estão em `src/domain/pitches.ts`. Por exemplo, se o society de sexta tiver 45×28 m, basta trocar `length: 50, width: 30`.
-
-## Créditos
-
-Inspirado no [tactics-board](https://github.com/gljubojevic/tactics-board) de **Goran Ljubojević**, que foi a base de estudo deste projeto. Esta versão foi reescrita do zero por **João Henrique Fanfa** para o Al-Rabbah.
-
-## i am
-João Henrique Fanfa 2026
