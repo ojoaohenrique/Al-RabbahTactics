@@ -77,4 +77,12 @@ src/
 
 ### Ajustando para o campo de vocês
 
-As medidas estão em `src/domain/pitches.ts`. Por exemplo, se o society de sexta tiver 45×28 m, basta trocar `length: 50, width: 30`.
+As medidas estão em `src/domain/pitches.ts`. Por exemplo, se o society de sexta tiver 45×28 m, basta trocar `length: 50, width: 30`. 
+
+## Créditos
+
+Inspirado no [tactics-board](https://github.com/gljubojevic/tactics-board), do mano **Goran Ljubojević**, que foi a base de estudo deste projeto. Esta versão foi reescrita do zero por mim para o **grandiosíssimo Al-Rabbah**.
+
+---
+
+**João Henrique Fanfa · 2026**
