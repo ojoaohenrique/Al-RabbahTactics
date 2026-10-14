@@ -85,3 +85,4 @@ Inspirado no [tactics-board](https://github.com/gljubojevic/tactics-board), do m
 
 ---
 
+**João Henrique Fanfa · 2026**
