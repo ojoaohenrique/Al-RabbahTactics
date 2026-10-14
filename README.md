@@ -1,12 +1,5 @@
+
 # Al-Rabbah Tactics
-
-<p align="center">
-  <img src="public/alrabbah-logo.png" alt="Escudo do Al-Rabbah" width="250">
-</p>
-
-Prancheta tática do **Al-Rabbah**, o meu time de toda sexta-feira. Serve para montar a escalação do rachão, desenhar jogadas e animar a movimentação dos jogadores, no computador ou no celular.
-# Al-Rabbah Tactics
-
 <p align="center">
   <img src="public/alrabbah-logo.png" alt="Escudo do Al-Rabbah" width="250">
 </p>
